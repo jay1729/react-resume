@@ -1,0 +1,12 @@
+.Work {
+    display: flex;
+}
+
+.ExperienceList {
+    margin-left: 5vh;
+}
+
+.work-title {
+    width: 60vh;
+    font-size: 5vh;
+}

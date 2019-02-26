@@ -1,0 +1,40 @@
+.BasicInfo {
+    display: flex;
+}
+
+.companyName {
+    text-align: left;
+    font-size: 5vh;
+    align-items: flex-start;
+}
+
+.EmptyBlock {
+    height: 5vh;
+}
+
+.BulletPoint {
+    display: flex;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.Block {
+    display: flex;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.BasicInfo {
+    padding-bottom: 2vh;
+}
+
+.Description {
+    display: flex;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.Experience {
+    padding-bottom: 10vh;
+    margin: 0%;
+}

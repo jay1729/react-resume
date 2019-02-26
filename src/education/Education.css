@@ -1,0 +1,22 @@
+.BasicInfo {
+    display: flex;
+}
+
+.UniversityName {
+    text-align: left;
+    font-size: 5vh;
+    align-items: flex-start;
+}
+
+.Education {
+    display: flex;
+}
+
+.ProgramList {
+    margin-left: 5vh;
+}
+
+.EducationTitle {
+    width: 60vh;
+    font-size: 5vh;
+}
