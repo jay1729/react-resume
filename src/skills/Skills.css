@@ -1,0 +1,35 @@
+.Skills {
+    display: flex;
+}
+
+.SkillsTitle {
+    width: 20vw;
+    font-size: 5vh;
+    text-align: left;
+    margin-left: 10vw;
+}
+
+.SkillRow {
+    display: flex;
+}
+
+img {
+    max-height: 10vw;
+    height: auto;
+    width: auto;
+    margin: 0%;
+}
+
+.Skill {
+    margin-right: 5vw;
+    align-items: center;
+}
+
+.SkillGroupTitle {
+    font-size: 4vh;
+    margin-bottom: 10vh;
+}
+
+.SkillGroup {
+    margin-bottom: 10vh;
+}

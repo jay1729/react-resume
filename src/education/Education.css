@@ -17,6 +17,8 @@
 }
 
 .EducationTitle {
-    width: 60vh;
+    width: 20vw;
     font-size: 5vh;
+    text-align: left;
+    margin-left: 10vw;
 }

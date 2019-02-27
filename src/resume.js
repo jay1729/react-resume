@@ -25,7 +25,11 @@ const resume = {
             from: '2015',
             to: '2020'
         }
-    ]
+    ],
+    skills: {
+        languages: ['Python', 'Java', 'JavaScript', 'CPP'],
+        tech: ['Django', 'ReactJS', 'Android']
+    }
 }
 
 export default resume;

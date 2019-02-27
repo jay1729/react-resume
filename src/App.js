@@ -3,6 +3,7 @@ import './App.css';
 import Work from './work/Work';
 import resume from './resume';
 import Education from './education/Education';
+import Skills from './skills/Skills';
 
 class App extends Component {
   render() {
@@ -14,8 +15,10 @@ class App extends Component {
           </h1>
         </header>
         <Work experience={resume.work}/>
-        <div className='Gap1' />
+        <div className='Gap' />
         <Education education={resume.education} />
+        <div className='Gap' />
+        <Skills languages={resume.skills.languages} tech={resume.skills.tech} />
       </div>
     );
   }
