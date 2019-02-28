@@ -15,3 +15,38 @@
     align-items: flex-start;
     margin-bottom: 2vh;
 }
+
+.Project {
+    width: 50vw;
+}
+
+.ProjectDesc {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.Projects {
+    display: flex;
+}
+
+.leftButton {
+    background-color: transparent;
+    border: 0ch;
+    font-size: 5vh;
+    color: white;
+    margin-right: 2vw;
+    outline: none;
+    transform: scaleY(2);
+    visibility: hidden;
+}
+
+.rightButton {
+    background-color: transparent;
+    border: 0ch;
+    font-size: 5vh;
+    color: white;
+    margin-left: 2vw;
+    outline: none;
+    transform: scaleY(2);
+    visibility: visible;
+}

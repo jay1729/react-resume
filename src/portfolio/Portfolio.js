@@ -46,6 +46,78 @@ class Project extends Component {
     }
 }
 
+class Projects extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            projectsData: this.props.projects,
+            projects: [],
+            currentProject: 0
+        }
+        this.swipeLeft = this.swipeLeft.bind(this);
+        this.swipeRight = this.swipeRight.bind(this);
+    }
+
+    renderProject(projectData){
+        return(
+            <Project title={projectData.title}
+                        desc={projectData.desc}
+                        bulletPoints={projectData.bulletPoints}
+                    />
+        );
+    }
+
+    renderProjects(){
+        var p = [];
+        for(let project of this.state.projectsData){
+            p.push(this.renderProject(project));
+        }
+        return p;
+    }
+
+    showButton(buttonName){
+        document.getElementById(buttonName).style.visibility = 'visible';
+    }
+
+    hideButton(buttonName){
+        document.getElementById(buttonName).style.visibility = 'hidden';
+    }
+
+    swipeLeft(event){
+        let nextProject = this.state.currentProject;
+        nextProject--;
+        if(nextProject < 0) return;
+        if(nextProject === 0) this.hideButton('leftButton');
+        if(this.state.currentProject === (this.state.projectsData.length - 1)) this.showButton('rightButton');
+        this.setState({
+            currentProject: nextProject
+        });
+    }
+
+    swipeRight(event){
+        let nextProject = this.state.currentProject;
+        nextProject++;
+        if(nextProject >= this.state.projectsData.length) return;
+        if(nextProject === (this.state.projectsData.length - 1)) this.hideButton('rightButton');
+        if(nextProject === 1) this.showButton('leftButton');
+        this.setState({
+            currentProject: nextProject
+        });
+    }
+
+    render(){
+        var p = this.renderProjects();
+        return(
+            <div className='Projects'>
+                <button className='leftButton' id='leftButton' onClick={this.swipeLeft}>{'<'}</button>
+                {p[this.state.currentProject]}
+                <button className='rightButton' id='rightButton' onClick={this.swipeRight}>{'>'}</button>
+            </div>
+        );
+    }
+}
+
 class Portfolio extends Component {
     render(){
         let projects = this.props.projects;
@@ -55,10 +127,7 @@ class Portfolio extends Component {
                     {'Portfolio'}
                 </div>
                 <div className='PortfolioContent'>
-                    <Project title={projects[0].title}
-                        desc={projects[0].desc}
-                        bulletPoints={projects[0].bulletPoints}
-                    />
+                    <Projects projects={projects} />
                 </div>
             </div>
         );

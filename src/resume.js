@@ -39,6 +39,19 @@ const resume = {
                 'Search files by regex to get a files in a tree structure',
                 'Download files/folders by regex'
             ]
+        },
+        {
+            title: 'File Share',
+            desc: 'An app which uses the android WiFi P2P interface to share files between two devices.'
+        },
+        {
+            title: 'Class Manager',
+            desc: 'An Android app which helps you track your Attendance in class',
+            bulletPoints: [
+                'Add new classes',
+                'Add and delete attendance records',
+                'Will remind you to mark attendance by sending you a notification after class ends'
+            ]
         }
     ]
 }
