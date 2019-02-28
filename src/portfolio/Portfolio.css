@@ -1,0 +1,17 @@
+.Portfolio {
+    display: flex;
+}
+
+.PortfolioTitle {
+    width: 20vw;
+    font-size: 5vh;
+    text-align: left;
+    margin-left: 10vw;
+}
+
+.ProjectTitle {
+    text-align: left;
+    font-size: 5vh;
+    align-items: flex-start;
+    margin-bottom: 2vh;
+}

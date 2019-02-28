@@ -29,7 +29,18 @@ const resume = {
     skills: {
         languages: ['Python', 'Java', 'JavaScript', 'CPP'],
         tech: ['Django', 'ReactJS', 'Android']
-    }
+    },
+    portfolio: [
+        {
+            title: 'ftplib',
+            desc: 'ftplib is a java library that you can use to make an ftp client',
+            bulletPoints: [
+                'Both Active and Passive mode supported',
+                'Search files by regex to get a files in a tree structure',
+                'Download files/folders by regex'
+            ]
+        }
+    ]
 }
 
 export default resume;

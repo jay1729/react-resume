@@ -4,6 +4,7 @@ import Work from './work/Work';
 import resume from './resume';
 import Education from './education/Education';
 import Skills from './skills/Skills';
+import Portfolio from './portfolio/Portfolio';
 
 class App extends Component {
   render() {
@@ -19,6 +20,9 @@ class App extends Component {
         <Education education={resume.education} />
         <div className='Gap' />
         <Skills languages={resume.skills.languages} tech={resume.skills.tech} />
+        <div className='Gap' />
+        <Portfolio projects={resume.portfolio} />
+        <div className='Gap' />
       </div>
     );
   }
