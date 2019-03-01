@@ -1,0 +1,16 @@
+.SocialMediaLogo {
+    height: 5vh;
+    width: 5vh;
+}
+
+.image {
+    height: 5vh;
+    width: 5vh;
+    filter: invert(0.5);
+}
+
+.image:hover {
+    height: 5vh;
+    width: 5vh;
+    filter: invert(0.9);
+}

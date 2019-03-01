@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Portfolio.css';
 import { isNullOrUndefined } from '../../node_modules/util';
+import SocialMediaLogo from '../social-media/SocialMediaLogo';
 
 class Project extends Component {
 
@@ -36,11 +37,18 @@ class Project extends Component {
     render(){
         return(
             <div className='Project'>
-                <div className='ProjectTitle'>
-                    {this.props.title}
+                <div className='GithubLogo' >
+                    <a href={this.props.url} >
+                        <SocialMediaLogo logo='github' />
+                    </a>
                 </div>
-                {this.renderDesc()}
-                {this.renderBulletPoints()}
+                <div className='ProjectBody'>
+                    <div className='ProjectTitle'>
+                        {this.props.title}
+                    </div>
+                    {this.renderDesc()}
+                    {this.renderBulletPoints()}
+                </div>
             </div>
         );
     }
@@ -65,6 +73,7 @@ class Projects extends Component {
             <Project title={projectData.title}
                         desc={projectData.desc}
                         bulletPoints={projectData.bulletPoints}
+                        url={projectData.url}
                     />
         );
     }

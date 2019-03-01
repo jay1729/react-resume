@@ -1,4 +1,8 @@
 const resume = {
+    name: 'Jayantha G V',
+    email: 'jayantha.gumballi@gmail.com',
+    github: 'https://github.com/jay1729',
+    linkedin: 'https://www.linkedin.com/in/jayantha-gumballi/',
     work: [
         {
             title: 'Software Development Intern',
@@ -38,11 +42,13 @@ const resume = {
                 'Both Active and Passive mode supported',
                 'Search files by regex to get a files in a tree structure',
                 'Download files/folders by regex'
-            ]
+            ],
+            url: 'https://github.com/jay1729/ftplib'
         },
         {
             title: 'File Share',
-            desc: 'An app which uses the android WiFi P2P interface to share files between two devices.'
+            desc: 'An app which uses the android WiFi P2P interface to share files between two devices.',
+            url: 'https://github.com/jay1729/ShareFiles'
         },
         {
             title: 'Class Manager',
@@ -51,7 +57,8 @@ const resume = {
                 'Add new classes',
                 'Add and delete attendance records',
                 'Will remind you to mark attendance by sending you a notification after class ends'
-            ]
+            ],
+            url: 'https://github.com/jay1729/Class-Manager'
         }
     ]
 }

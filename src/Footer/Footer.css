@@ -1,0 +1,11 @@
+.Footer {
+    display: flex;
+    height: 30vh;
+    background-color: #1d1c1c;
+    justify-content: center;
+    align-items: center;
+}
+
+.FooterLogo {
+    margin-right: 7vw;
+}

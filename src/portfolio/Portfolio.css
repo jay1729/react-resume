@@ -17,12 +17,21 @@
 }
 
 .Project {
-    width: 50vw;
+    display: flex;
+    align-items: center;
+}
+
+.GithubLogo {
+    margin-right: 3vw;
 }
 
 .ProjectDesc {
     text-align: left;
     align-items: flex-start;
+}
+
+.ProjectBody {
+    width: 50vw;
 }
 
 .Projects {
