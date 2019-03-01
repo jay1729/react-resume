@@ -57,6 +57,7 @@ class Projects extends Component {
         }
         this.swipeLeft = this.swipeLeft.bind(this);
         this.swipeRight = this.swipeRight.bind(this);
+        this.bindMouseActivity();
     }
 
     renderProject(projectData){
@@ -104,6 +105,54 @@ class Projects extends Component {
         this.setState({
             currentProject: nextProject
         });
+    }
+
+    mouseEnter(element){
+        element.style.color = 'white';
+    }
+
+    mouseLeave(element){
+        element.style.color = 'gray';
+    }
+
+    leftButtonMouseEnter(){
+        let element = document.getElementById('leftButton');
+        this.mouseEnter(element);
+    }
+
+    leftButtonMouseLeave(){
+        let element = document.getElementById('leftButton');
+        this.mouseLeave(element);
+    }
+
+    rightButtonMouseEnter(){
+        let element = document.getElementById('rightButton');
+        this.mouseEnter(element);
+    }
+
+    rightButtonMouseLeave(){
+        let element = document.getElementById('rightButton');
+        this.mouseLeave(element);
+    }
+
+    bindMouseActivity(){
+        this.leftButtonMouseEnter = this.leftButtonMouseEnter.bind(this);
+        this.leftButtonMouseLeave = this.leftButtonMouseLeave.bind(this);
+        this.rightButtonMouseEnter = this.rightButtonMouseEnter.bind(this);
+        this.rightButtonMouseLeave = this.rightButtonMouseLeave.bind(this);
+    }
+
+    registerMouseActivity(){
+        let leftButton = document.getElementById('leftButton');
+        leftButton.onmouseenter = this.leftButtonMouseEnter;
+        leftButton.onmouseleave = this.leftButtonMouseLeave;
+        let rightButton = document.getElementById('rightButton');
+        rightButton.onmouseenter = this.rightButtonMouseEnter;
+        rightButton.onmouseleave = this.rightButtonMouseLeave;
+    }
+
+    componentDidMount(){
+        this.registerMouseActivity();
     }
 
     render(){

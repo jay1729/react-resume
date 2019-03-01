@@ -33,7 +33,7 @@
     background-color: transparent;
     border: 0ch;
     font-size: 5vh;
-    color: white;
+    color: gray;
     margin-right: 2vw;
     outline: none;
     transform: scaleY(2);
@@ -44,7 +44,7 @@
     background-color: transparent;
     border: 0ch;
     font-size: 5vh;
-    color: white;
+    color: gray;
     margin-left: 2vw;
     outline: none;
     transform: scaleY(2);
