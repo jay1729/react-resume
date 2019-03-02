@@ -34,10 +34,9 @@ class Description extends Component {
 
     getBulletPoint(s){
         return(
-            <div className='BulletPoint'>
-                <span>&bull;&nbsp;&nbsp;</span>
-                {s}
-            </div>
+            <li className='BulletPointWork'>
+                <p className='BulletPointPara'>{s}</p>
+            </li>
         );
     }
 
@@ -45,9 +44,9 @@ class Description extends Component {
         var output = [];
         for(let d of desc) output.push(this.getBulletPoint(d));
         return(
-            <div className='ListDesc'>
+            <ul className='ul'>
                 {output}
-            </div>
+            </ul>
         );
     }
 

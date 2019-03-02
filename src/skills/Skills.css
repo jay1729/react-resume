@@ -1,5 +1,7 @@
 .Skills {
     display: flex;
+    background-color: #4d4d4d;
+    padding-top: 10vh;
 }
 
 .SkillsTitle {
@@ -14,7 +16,7 @@
 }
 
 img {
-    max-height: 10vw;
+    max-height: 7vw;
     height: auto;
     width: auto;
     margin: 0%;
@@ -28,6 +30,7 @@ img {
 .SkillGroupTitle {
     font-size: 4vh;
     margin-bottom: 10vh;
+    display: flex;
 }
 
 .SkillGroup {

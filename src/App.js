@@ -6,6 +6,7 @@ import Education from './education/Education';
 import Skills from './skills/Skills';
 import Portfolio from './portfolio/Portfolio';
 import Footer from './Footer/Footer';
+import About from './about/About';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
             {resume.name}
           </h1>
         </header>
+        <About desc={resume.about.desc} />
         <Work experience={resume.work}/>
         <div className='Gap' />
         <Education education={resume.education} />

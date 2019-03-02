@@ -16,28 +16,37 @@ class Project extends Component {
 
     renderBulletPoint(text){
         return(
-            <div className='BulletPoint'>
-                <span>&bull;&nbsp;&nbsp;</span>
+            <li className='ProjectBulletPoint'>
                 {text}
-            </div>
+            </li>
         );
     }
 
     renderBulletPoints(){
         if(isNullOrUndefined(this.props.bulletPoints)) return null;
         return(
-            <div className='ProjectPoints'>
+            <ul className='ProjectPoints'>
                 {this.props.bulletPoints.map((point, index) => {
                     return this.renderBulletPoint(point);
                 })}
-            </div>
+            </ul>
         );
+    }
+
+    getLogoId(){
+        return 'GithubLogo '+this.props.title;
+    }
+
+    componentDidMount(){
+        if(isNullOrUndefined(this.props.url)){
+            document.getElementById(this.getLogoId()).style.visibility = 'hidden';
+        }
     }
 
     render(){
         return(
-            <div className='Project'>
-                <div className='GithubLogo' >
+            <div className='Project' key={this.props.key}>
+                <div className='GithubLogo' id={this.getLogoId()} >
                     <a href={this.props.url} >
                         <SocialMediaLogo logo='github' />
                     </a>
@@ -74,6 +83,7 @@ class Projects extends Component {
                         desc={projectData.desc}
                         bulletPoints={projectData.bulletPoints}
                         url={projectData.url}
+                        key={projectData.title}
                     />
         );
     }

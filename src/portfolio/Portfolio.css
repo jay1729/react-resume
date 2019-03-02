@@ -16,6 +16,10 @@
     margin-bottom: 2vh;
 }
 
+.ProjectBulletPoint {
+    text-align: left;
+}
+
 .Project {
     display: flex;
     align-items: center;
