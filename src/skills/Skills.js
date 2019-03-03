@@ -52,7 +52,7 @@ class SkillGroup extends Component {
 class Skills extends Component {
     render(){
         return(
-            <div className='Skills'>
+            <div className='Skills' id='Skills'>
                 <div className='SkillsTitle'>
                     {'Skills'}
                 </div>

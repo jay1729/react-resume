@@ -190,7 +190,7 @@ class Portfolio extends Component {
     render(){
         let projects = this.props.projects;
         return(
-            <div className='Portfolio'>
+            <div className='Portfolio' id='Portfolio' >
                 <div className='PortfolioTitle'>
                     {'Portfolio'}
                 </div>

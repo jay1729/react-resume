@@ -52,7 +52,7 @@ class Education extends Component {
     render(){
         this.renderProgramList();
         return(
-            <div className='Education'>
+            <div className='Education' id='Education'>
                 <div className='EducationTitle'>
                     {'Education'}
                 </div>

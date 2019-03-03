@@ -20,7 +20,7 @@ class Work extends Component {
 
     render(){
         return(
-            <div className="Work">
+            <div className="Work" id='Work'>
                 <div className="work-title">
                     {workConstants.name}
                 </div>

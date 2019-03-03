@@ -2,6 +2,7 @@
   text-align: center;
   color: white;
   background-color: #303030;
+  margin: 0%;
 }
 
 .Name {
@@ -18,4 +19,63 @@
 
 .Gap {
   height: 20vh;
+}
+
+#navbar {
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  height: 7vh;
+}
+
+#nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  height: 7vh;
+  margin-left: 0%;
+}
+
+.navitem {
+  display: inline-block;
+  margin-top: 0%;
+  height: 7vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.App-Header {
+  align-items: center;
+  justify-content: center;
+}
+
+.navlink {
+  text-decoration: none;
+  color: white;
+}
+
+.navbutton {
+  text-align: center;
+  font: bold;
+  font-size: 1.5vw;
+  vertical-align: middle;
+  line-height: 7vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
+.navbutton:hover {
+  text-align: center;
+  font: bold;
+  font-size: 1.5vw;
+  vertical-align: middle;
+  line-height: 7vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  background-color: #303030;
 }

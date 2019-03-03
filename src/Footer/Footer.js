@@ -37,7 +37,7 @@ class Footer extends Component {
         this.renderLogos();
         console.log(this.props.email);
         return(
-            <div className='Footer'>
+            <div className='Footer' id='Contact'>
                 {this.logos}
             </div>
         );
