@@ -70,17 +70,28 @@ class Projects extends Component {
         this.projects = props.projects;
         this.projects = [this.projects[this.projects.length-1], ...this.projects, this.projects[0]];
         this.currentProject = 1;
+        this.partialScroll = 0.0;
         this.gotoNextProjectSlow = this.gotoNextProjectSlow.bind(this);
         this.autoScroll = true;
         this.autoScrollToNextProject = this.autoScrollToNextProject.bind(this);
         this.transitionListener = null;
         this.changeProjectQuick = this.changeProjectQuick.bind(this);
         this.checkTransition = this.checkTransition.bind(this);
-        this.registerGotoFirstAfterTransition = this.registerGotoFirstAfterTransition.bind(this);
+        this.registerTransitionCheck = this.registerTransitionCheck.bind(this);
+        this.stopAutoScroll = this.stopAutoScroll.bind(this);
+        this.resumeAutoScroll = this.resumeAutoScroll.bind(this);
+        this.touchstart = this.touchstart.bind(this);
+        this.touchmove = this.touchmove.bind(this);
+        this.touchend = this.touchend.bind(this);
+        this.computeTranslation = this.computeTranslation.bind(this);
+        this.touchevent = {
+            start: -100,
+            end: -100
+        }
     }
 
-    renderProject(projectData){
-        return <Project key={projectData.title}
+    renderProject(projectData, index){
+        return <Project key={index}
                     title={projectData.title}
                     url={projectData.url}
                     desc={projectData.desc}
@@ -89,9 +100,9 @@ class Projects extends Component {
 
     renderProjects(){
         var output = [];
-        for(let project of this.projects){
-            output.push(this.renderProject(project));
-        }
+        this.projects.map((v, index) => {
+            output.push(this.renderProject(v, index));
+        });
         return output;
     }
 
@@ -99,8 +110,23 @@ class Projects extends Component {
         this.autoScroll = false;
     }
 
+    resumeAutoScroll(){
+        this.autoScroll = true;
+    }
+
     translate(){
-        document.getElementById('Projects').style.transform = 'translate(calc('+this.currentProject+'*-100%))';
+        console.log('translate(calc('+(this.currentProject+this.partialScroll)+'*-100%))');
+        document.getElementById('Projects').style.transform = 'translate(calc('+(this.currentProject+this.partialScroll)+'*-100%))';
+    }
+
+    translateQuick(){
+        document.getElementById('Projects').style.transition = 'unset';
+        this.translate();
+    }
+
+    translateSlow(){
+        document.getElementById('Projects').style.transition = 'transform .5s ease-out';
+        this.translate();
     }
 
     checkTransition(){
@@ -108,7 +134,7 @@ class Projects extends Component {
         else if(this.currentProject === 0) this.changeProjectQuick(this.projects.length-2);
     }
 
-    registerGotoFirstAfterTransition(){
+    registerTransitionCheck(){
         document.getElementById('Projects').addEventListener('transitionend', this.checkTransition);
     }
 
@@ -125,7 +151,8 @@ class Projects extends Component {
     }
 
     gotoNextProjectSlow(){
-        this.currentProject += 1;
+        this.currentProject = Math.round(this.currentProject) + 1;
+        if(this.currentProject >= this.projects.length) this.currentProject = 1;
         document.getElementById('Projects').style.transition = 'transform .5s ease-out';
         this.translate();
     }
@@ -134,10 +161,51 @@ class Projects extends Component {
         if(this.autoScroll) this.gotoNextProjectSlow();
     }
 
+    touchstart(event){
+        event.preventDefault();
+        this.stopAutoScroll();
+        this.touchevent.start = event.changedTouches[0].clientX;
+        console.log(this.touchevent);
+    }
+
+    touchend(event){
+        event.preventDefault();
+        this.resumeAutoScroll();
+        this.touchevent.end = event.changedTouches[0].clientX;
+        console.log(this.touchevent);
+        this.touchevent = {
+            start: null,
+            end: null
+        }
+        this.currentProject += Math.round(this.partialScroll);
+        this.partialScroll = 0.0;
+        this.translateSlow();
+    }
+
+    computeTranslation(){
+        let delta = this.touchevent.start - this.touchevent.end;
+        this.partialScroll = delta / window.screen.width;
+        this.translateQuick();
+    }
+
+    touchmove(event){
+        event.preventDefault();
+        this.touchevent.end = event.changedTouches[0].clientX;
+        this.computeTranslation();
+    }
+
+    registerTouchEvents(){
+        document.getElementById('Projects').addEventListener('touchstart', this.touchstart);
+        document.getElementById('Projects').addEventListener('touchmove', this.touchmove);
+        document.getElementById('Projects').addEventListener('touchend', this.touchend);
+    }
+
     componentDidMount(){
+        console.log("WIDTH "+window.screen.width);
         this.changeProjectQuick(this.currentProject);
         setInterval(this.autoScrollToNextProject, 5000);
-        this.registerGotoFirstAfterTransition();
+        this.registerTransitionCheck();
+        this.registerTouchEvents();
     }
 
     render(){
