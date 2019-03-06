@@ -4,8 +4,24 @@
     background-color: #1d1c1c;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .FooterLogo {
     margin-right: 7vw;
+}
+
+@media only screen and (max-width: 500px) {
+    .Footer {
+        display: flex;
+        height: 20vh;
+        background-color: #1d1c1c;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .FooterLogo {
+        margin-right: 10vw;
+        margin-left: 10vw;
+    }
 }

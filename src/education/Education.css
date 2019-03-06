@@ -4,7 +4,7 @@
 
 .UniversityName {
     text-align: left;
-    font-size: 5vh;
+    font-size: 2vw;
     align-items: flex-start;
 }
 
@@ -12,15 +12,43 @@
     display: flex;
     padding-top: 20vh;
     padding-bottom: 20vh;
+    width: 100%;
 }
 
 .ProgramList {
-    margin-left: 5vh;
+    margin-left: 5vw;
 }
 
 .EducationTitle {
     width: 20vw;
-    font-size: 5vh;
+    font-size: 2vw;
     text-align: left;
     margin-left: 10vw;
+}
+
+@media only screen and (max-width: 500px) {
+    .Education {
+        display: block;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+        width: 100%;
+    }
+    .EducationTitle {
+        font-size: 6vw;
+        text-align: left;
+        margin-left: 3vw;
+        padding-bottom: 3vh;
+    }
+    .UniversityName {
+        text-align: left;
+        font-size: 5vw;
+        align-items: flex-start;
+        padding-bottom: 1vh;
+    }
+    .ProgramList {
+        margin-left: 3vw;
+    }
+    .Program {
+        padding-bottom: 2vh;
+    }
 }

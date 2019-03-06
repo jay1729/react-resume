@@ -49,10 +49,10 @@ class App extends Component {
         <Work experience={resume.work}/>
         <Education education={resume.education} />
         <Skills languages={resume.skills.languages} tech={resume.skills.tech} />
-        <div className='Gap' />
         <Portfolio projects={resume.portfolio} />
-        <div className='Gap' />
         <Footer github={resume.github} email={resume.email} linkedin={resume.linkedin} />
+        <div className='Gap' />
+        <div className='Gap' />
       </div>
     );
   }

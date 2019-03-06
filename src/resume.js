@@ -41,7 +41,7 @@ const resume = {
         }
     ],
     skills: {
-        languages: ['Python', 'Java', 'JavaScript', 'CPP'],
+        languages: ['Python', 'Java', 'JavaScript', 'CPP', 'Python', 'Java'],
         tech: ['Django', 'ReactJS', 'Android']
     },
     portfolio: [

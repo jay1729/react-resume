@@ -2,6 +2,7 @@
     display: flex;
     background-color: #4d4d4d;
     padding-top: 10vh;
+    width: 100%;
 }
 
 .ExperienceList {
@@ -10,7 +11,25 @@
 
 .work-title {
     width: 20vw;
-    font-size: 5vh;
+    font-size: 2vw;
     text-align: left;
     margin-left: 10vw;
+}
+
+@media only screen and (max-width: 500px){
+    .Work {
+        display: inline-block;
+        background-color: #4d4d4d;
+        padding-top: 5vh;
+    }
+    .work-title {
+        font-size: 6vw;
+        text-align: left;
+        margin-left: 3vw;
+        max-width: 100%;
+        width: auto;
+    }
+    .ExperienceList {
+        margin-left: 4vh;
+    }
 }

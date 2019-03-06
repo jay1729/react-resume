@@ -4,13 +4,14 @@ import { isNullOrUndefined } from 'util';
 
 class BasicInfo extends Component {
     render(){
+        let date = this.props.from+'-'+this.props.to;
         return(
-            <div className="BasicInfo">
-                {this.props.title}
-                <span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
-                {this.props.location}
-                <span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
-                {this.props.from}-{this.props.to}
+            <div className="BasicInfoExp">
+                <div className='BITitle' >{this.props.title}</div>
+                <div className='ExpBullet'>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</div>
+                <div className='BILocation' >{this.props.location}</div>
+                <div className='ExpBullet'>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</div>
+                <div className='BIDate' >{date}</div>
             </div>
         );
     }

@@ -1,10 +1,11 @@
-.BasicInfo {
+.BasicInfoExp {
     display: flex;
+    padding-bottom: 2vh;
 }
 
 .companyName {
     text-align: left;
-    font-size: 5vh;
+    font-size: 2vw;
     align-items: flex-start;
 }
 
@@ -35,10 +36,6 @@
     align-items: flex-start;
 }
 
-.BasicInfo {
-    padding-bottom: 2vh;
-}
-
 .Description {
     display: flex;
     text-align: left;
@@ -46,6 +43,44 @@
 }
 
 .Experience {
-    padding-bottom: 10vh;
+    padding-bottom: 2vh;
     margin: 0%;
+}
+
+@media only screen and (max-width: 500px){
+    .companyName {
+        text-align: left;
+        font-size: 5vw;
+        align-items: flex-start;
+        padding-top: 5vh;
+        padding-bottom: 1vh;
+    }
+    .BasicInfoExp {
+        display: inline;
+        padding-bottom: 2vh;
+    }
+    .BITitle {
+        display: inline;
+        text-align: left;
+    }
+    .ExpBullet {
+        display: inline;
+    }
+    .BILocation {
+        display: inline;
+    }
+    .BIDate {
+        display: inline;
+    }
+    .Description {
+        display: flex;
+        text-align: left;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .BulletPointPara {
+        margin-left: 0%;
+        width: auto;
+        max-width: 90%;
+    }
 }

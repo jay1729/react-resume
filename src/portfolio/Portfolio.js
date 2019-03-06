@@ -67,120 +67,84 @@ class Projects extends Component {
 
     constructor(props){
         super(props);
-        this.state = {
-            projectsData: this.props.projects,
-            projects: [],
-            currentProject: 0
-        }
-        this.swipeLeft = this.swipeLeft.bind(this);
-        this.swipeRight = this.swipeRight.bind(this);
-        this.bindMouseActivity();
+        this.projects = props.projects;
+        this.projects = [this.projects[this.projects.length-1], ...this.projects, this.projects[0]];
+        this.currentProject = 1;
+        this.gotoNextProjectSlow = this.gotoNextProjectSlow.bind(this);
+        this.autoScroll = true;
+        this.autoScrollToNextProject = this.autoScrollToNextProject.bind(this);
+        this.transitionListener = null;
+        this.changeProjectQuick = this.changeProjectQuick.bind(this);
+        this.checkTransition = this.checkTransition.bind(this);
+        this.registerGotoFirstAfterTransition = this.registerGotoFirstAfterTransition.bind(this);
     }
 
     renderProject(projectData){
-        return(
-            <Project title={projectData.title}
-                        desc={projectData.desc}
-                        bulletPoints={projectData.bulletPoints}
-                        url={projectData.url}
-                        key={projectData.title}
-                    />
-        );
+        return <Project key={projectData.title}
+                    title={projectData.title}
+                    url={projectData.url}
+                    desc={projectData.desc}
+                    bulletPoints={projectData.bulletPoints} />;
     }
 
     renderProjects(){
-        var p = [];
-        for(let project of this.state.projectsData){
-            p.push(this.renderProject(project));
+        var output = [];
+        for(let project of this.projects){
+            output.push(this.renderProject(project));
         }
-        return p;
+        return output;
     }
 
-    showButton(buttonName){
-        document.getElementById(buttonName).style.visibility = 'visible';
+    stopAutoScroll(){
+        this.autoScroll = false;
     }
 
-    hideButton(buttonName){
-        document.getElementById(buttonName).style.visibility = 'hidden';
+    translate(){
+        document.getElementById('Projects').style.transform = 'translate(calc('+this.currentProject+'*-100%))';
     }
 
-    swipeLeft(event){
-        let nextProject = this.state.currentProject;
-        nextProject--;
-        if(nextProject < 0) return;
-        if(nextProject === 0) this.hideButton('leftButton');
-        if(this.state.currentProject === (this.state.projectsData.length - 1)) this.showButton('rightButton');
-        this.setState({
-            currentProject: nextProject
-        });
+    checkTransition(){
+        if(this.currentProject === (this.projects.length-1)) this.changeProjectQuick(1);
+        else if(this.currentProject === 0) this.changeProjectQuick(this.projects.length-2);
     }
 
-    swipeRight(event){
-        let nextProject = this.state.currentProject;
-        nextProject++;
-        if(nextProject >= this.state.projectsData.length) return;
-        if(nextProject === (this.state.projectsData.length - 1)) this.hideButton('rightButton');
-        if(nextProject === 1) this.showButton('leftButton');
-        this.setState({
-            currentProject: nextProject
-        });
+    registerGotoFirstAfterTransition(){
+        document.getElementById('Projects').addEventListener('transitionend', this.checkTransition);
     }
 
-    mouseEnter(element){
-        element.style.color = 'white';
+    changeProjectQuick(newIndex){
+        this.currentProject = newIndex;
+        document.getElementById('Projects').style.transition = 'unset';
+        this.translate();
     }
 
-    mouseLeave(element){
-        element.style.color = 'gray';
+    changeProjectSlow(newIndex){
+        this.currentProject = newIndex;
+        document.getElementById('Projects').style.transition = 'transform .5s ease-out';
+        this.translate();
     }
 
-    leftButtonMouseEnter(){
-        let element = document.getElementById('leftButton');
-        this.mouseEnter(element);
+    gotoNextProjectSlow(){
+        this.currentProject += 1;
+        document.getElementById('Projects').style.transition = 'transform .5s ease-out';
+        this.translate();
     }
 
-    leftButtonMouseLeave(){
-        let element = document.getElementById('leftButton');
-        this.mouseLeave(element);
-    }
-
-    rightButtonMouseEnter(){
-        let element = document.getElementById('rightButton');
-        this.mouseEnter(element);
-    }
-
-    rightButtonMouseLeave(){
-        let element = document.getElementById('rightButton');
-        this.mouseLeave(element);
-    }
-
-    bindMouseActivity(){
-        this.leftButtonMouseEnter = this.leftButtonMouseEnter.bind(this);
-        this.leftButtonMouseLeave = this.leftButtonMouseLeave.bind(this);
-        this.rightButtonMouseEnter = this.rightButtonMouseEnter.bind(this);
-        this.rightButtonMouseLeave = this.rightButtonMouseLeave.bind(this);
-    }
-
-    registerMouseActivity(){
-        let leftButton = document.getElementById('leftButton');
-        leftButton.onmouseenter = this.leftButtonMouseEnter;
-        leftButton.onmouseleave = this.leftButtonMouseLeave;
-        let rightButton = document.getElementById('rightButton');
-        rightButton.onmouseenter = this.rightButtonMouseEnter;
-        rightButton.onmouseleave = this.rightButtonMouseLeave;
+    autoScrollToNextProject(){
+        if(this.autoScroll) this.gotoNextProjectSlow();
     }
 
     componentDidMount(){
-        this.registerMouseActivity();
+        this.changeProjectQuick(this.currentProject);
+        setInterval(this.autoScrollToNextProject, 5000);
+        this.registerGotoFirstAfterTransition();
     }
 
     render(){
-        var p = this.renderProjects();
+        let projects = this.renderProjects();
         return(
-            <div className='Projects'>
-                <button className='leftButton' id='leftButton' onClick={this.swipeLeft}>{'<'}</button>
-                {p[this.state.currentProject]}
-                <button className='rightButton' id='rightButton' onClick={this.swipeRight}>{'>'}</button>
+            <div className='Projects' id='Projects'>
+                {projects}
             </div>
         );
     }
