@@ -201,11 +201,18 @@ class Projects extends Component {
     }
 
     componentDidMount(){
-        console.log("WIDTH "+window.screen.width);
+        //console.log("WIDTH "+window.screen.width);
         this.changeProjectQuick(this.currentProject);
         setInterval(this.autoScrollToNextProject, 5000);
         this.registerTransitionCheck();
         this.registerTouchEvents();
+    }
+
+    componentDidUpdate(){
+        if(this.props.swipe != 0){
+            this.currentProject += this.props.swipe;
+            this.translateSlow();
+        }
     }
 
     render(){
@@ -219,6 +226,34 @@ class Projects extends Component {
 }
 
 class Portfolio extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            swipeAction: 0
+        }
+    }
+
+    leftSwipe = () => {
+        this.setState({
+            swipeAction: -1
+        });
+    }
+
+    rightSwipe = () => {
+        this.setState({
+            swipeAction: 1
+        });
+    }
+
+    componentDidUpdate(){
+        if(this.state.swipeAction != 0){
+            this.setState({
+                swipeAction: 0
+            });
+        }
+    }
+
     render(){
         let projects = this.props.projects;
         return(
@@ -226,9 +261,12 @@ class Portfolio extends Component {
                 <div className='PortfolioTitle'>
                     {'Portfolio'}
                 </div>
+                <button className='leftButton' onClick={this.leftSwipe}>{'<'}</button>
                 <div className='PortfolioContent'>
-                    <Projects projects={projects} />
+                    <Projects projects={projects} swipe={this.state.swipeAction} />
                 </div>
+                <button className='rightButton' onClick={this.rightSwipe}>{'>'}</button>
+                <div className='blockingScreen'/>
             </div>
         );
     }

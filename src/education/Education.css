@@ -51,4 +51,10 @@
     .Program {
         padding-bottom: 2vh;
     }
+
+    .BasicInfo {
+        align-items: flex-start;
+        justify-content: left;
+        margin-right: 5%;
+    }
 }
