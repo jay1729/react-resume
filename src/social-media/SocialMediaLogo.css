@@ -1,16 +1,16 @@
 .SocialMediaLogo {
-    height: 5vh;
-    width: 5vh;
+    height: inherit;
+    width: inherit;
 }
 
 .image {
-    height: 5vh;
-    width: 5vh;
+    height: inherit;
+    width: inherit;
     filter: invert(0.5);
 }
 
 .image:hover {
-    height: 5vh;
-    width: 5vh;
+    height: inherit;
+    width: inherit;
     filter: invert(0.9);
 }

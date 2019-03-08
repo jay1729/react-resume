@@ -46,14 +46,14 @@ class Project extends Component {
     render(){
         return(
             <div className='Project' key={this.props.key}>
-                <div className='GithubLogo' id={this.getLogoId()} >
-                    <a href={this.props.url} >
-                        <SocialMediaLogo logo='github' />
-                    </a>
-                </div>
                 <div className='ProjectBody'>
                     <div className='ProjectTitle'>
                         {this.props.title}
+                        <div className='GithubLogo' id={this.getLogoId()} >
+                        <a href={this.props.url} >
+                            <SocialMediaLogo logo='github' />
+                        </a>
+                    </div>
                     </div>
                     {this.renderDesc()}
                     {this.renderBulletPoints()}
@@ -162,14 +162,12 @@ class Projects extends Component {
     }
 
     touchstart(event){
-        event.preventDefault();
         this.stopAutoScroll();
         this.touchevent.start = event.changedTouches[0].clientX;
         console.log(this.touchevent);
     }
 
     touchend(event){
-        event.preventDefault();
         this.resumeAutoScroll();
         this.touchevent.end = event.changedTouches[0].clientX;
         console.log(this.touchevent);

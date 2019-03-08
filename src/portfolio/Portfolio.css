@@ -27,6 +27,7 @@
 }
 
 .ProjectTitle {
+    display: flex;
     font-size: 2vw;
     text-align: left;
     margin-bottom: 2vh;
@@ -49,7 +50,11 @@
 }
 
 .GithubLogo {
-    display: none;
+    display: inline-block;
+    width: 7%;
+    height: 7%;
+    margin-top: 1.5%;
+    margin-left: 7%;
 }
 
 .ProjectDesc {
@@ -149,10 +154,11 @@
     }
 
     .ProjectTitle {
-        margin-top: 3vh;
+        display: flex;
+        margin-top: 2vh;
         text-align: left;
         font-size: 5vw;
-        align-items: flex-start;
+        align-items: center;
         margin-bottom: 2vh;
     }
 
@@ -174,6 +180,8 @@
         width: unset;
         max-width: 90%;
         margin-left: 5vw;
+        justify-content: left;
+        text-align: left;
     }
 
     .ProjectDesc {
@@ -182,7 +190,11 @@
     }
 
     .GithubLogo {
-        display: none;
+        display: inline-block;
+        width: 7%;
+        height: 7%;
+        margin-top: 3%;
+        margin-left: 7%;
     }
 
     .leftButton {

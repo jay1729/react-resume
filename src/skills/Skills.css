@@ -76,13 +76,13 @@ img {
         padding-bottom: 3vw;
     }
     img {
-        max-height: 11vw;
+        max-height: 13vw;
         height: auto;
         width: auto;
         margin: 0%;
     }
     .SkillName {
-        font-size: 1vh;
+        font-size: 1.5vh;
     }
 }
 

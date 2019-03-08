@@ -8,6 +8,8 @@
 }
 
 .FooterLogo {
+    height: 6vh;
+    width: 6vh;
     margin-right: 7vw;
 }
 
@@ -21,7 +23,9 @@
         width: 100%;
     }
     .FooterLogo {
-        margin-right: 10vw;
-        margin-left: 10vw;
+        height: 9vw;
+        width: 9vw;
+        margin-right: 8vw;
+        margin-left: 8vw;
     }
 }
