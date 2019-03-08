@@ -130,8 +130,8 @@ class Projects extends Component {
     }
 
     checkTransition(){
-        if(this.currentProject === (this.projects.length-1)) this.changeProjectQuick(1);
-        else if(this.currentProject === 0) this.changeProjectQuick(this.projects.length-2);
+        if(this.currentProject >= (this.projects.length-1)) this.changeProjectQuick(1);
+        else if(this.currentProject <= 0) this.changeProjectQuick(this.projects.length-2);
     }
 
     registerTransitionCheck(){

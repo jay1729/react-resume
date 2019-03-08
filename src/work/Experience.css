@@ -1,6 +1,7 @@
 .BasicInfoExp {
     display: flex;
     padding-bottom: 2vh;
+    width: 100%;
 }
 
 .companyName {
@@ -45,9 +46,10 @@
 .Experience {
     padding-bottom: 2vh;
     margin: 0%;
+    
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 800px){
     .companyName {
         text-align: left;
         font-size: 5vw;
@@ -56,8 +58,12 @@
         padding-bottom: 1vh;
     }
     .BasicInfoExp {
-        display: inline;
+        display: inline-block;
+        text-align: left;
         padding-bottom: 2vh;
+        justify-content: left;
+        margin-left: 0%;
+        min-width: 100%;
     }
     .BITitle {
         display: inline;
@@ -82,5 +88,11 @@
         margin-left: 0%;
         width: auto;
         max-width: 90%;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 800px) {
+    .companyName {
+        font-size: 3vw;
     }
 }

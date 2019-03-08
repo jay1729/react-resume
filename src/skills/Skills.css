@@ -41,7 +41,7 @@ img {
     font-size: 2vh;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 800px) {
     .Skills {
         display: block;
         background-color: #4d4d4d;
@@ -76,12 +76,24 @@ img {
         padding-bottom: 3vw;
     }
     img {
-        max-height: 9vw;
+        max-height: 11vw;
         height: auto;
         width: auto;
         margin: 0%;
     }
     .SkillName {
         font-size: 1vh;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 800px) {
+    .SkillsTitle {
+        font-size: 4vw;
+    }
+    .SkillGroupTitle {
+        font-size: 3vw;
+    }
+    img {
+        max-height: 7vw;
     }
 }
