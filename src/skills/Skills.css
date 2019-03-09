@@ -97,3 +97,15 @@ img {
         max-height: 7vw;
     }
 }
+
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+    .SkillsTitle {
+        font-size: 3.5vw;
+    }
+    .SkillGroupTitle {
+        font-size: 3vw;
+    }
+    img {
+        max-height: 5vw;
+    }
+}

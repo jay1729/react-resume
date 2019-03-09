@@ -1,10 +1,32 @@
 import React, { Component } from 'react';
 import './Experience.css';
 import { isNullOrUndefined } from 'util';
+import getMonthShort from '../Utils';
 
 class BasicInfo extends Component {
+
+    getMonth = (date) => {
+        return getMonthShort(date);
+    }
+
+    getYear = (date) => {
+        return date.getFullYear() % 100;
+    }
+
+    getDate = (dateString) => {
+        let date = new Date(dateString);
+        let output = this.getMonth(date) + ' ' + this.getYear(date);
+        return output;
+    }
+
+    getDuration = () => {
+        let fromDate = this.getDate(this.props.from);
+        let toDate = this.getDate(this.props.to);
+        return fromDate + '-' + toDate;
+    }
+
     render(){
-        let date = this.props.from+'-'+this.props.to;
+        let date = this.getDuration();
         return(
             <div className="BasicInfoExp">
                 <div className='BITitle' >{this.props.title}</div>

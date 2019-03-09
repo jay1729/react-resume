@@ -221,3 +221,25 @@
         font-size: 3vw;
     }
 }
+
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+    .PortfolioTitle {
+        font-size: 3.5vw;
+    }
+
+    .ProjectTitle {
+        font-size: 3vw;
+    }
+
+    .Project {
+        font-size: 2vw;
+    }
+
+    .GithubLogo {
+        display: inline-block;
+        width: 10%;
+        height: 10%;
+        margin-top: 2%;
+        margin-left: 7%;
+    }
+}

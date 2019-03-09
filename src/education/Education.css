@@ -67,3 +67,15 @@
         font-size: 3vw;
     }
 }
+
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+    .EducationTitle {
+        font-size: 3.5vw;
+    }
+    .UniversityName {
+        font-size: 3vw;
+    }
+    .BasicInfo {
+        font-size: 2vw;
+    }
+}

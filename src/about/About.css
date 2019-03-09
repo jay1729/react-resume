@@ -1,11 +1,12 @@
 .AboutTitle {
     margin-left: 30vw;
     padding-top: 20vh;
+    margin-top: 0%;
 }
 
 .AboutDesc {
     display: flex;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     margin-left: 30vw;
     margin-right: 5vw;
 }
@@ -60,5 +61,11 @@
     }
     .DescPara {
         max-width: 100%;
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+    .AboutDesc {
+        font-size: 2vw;
     }
 }

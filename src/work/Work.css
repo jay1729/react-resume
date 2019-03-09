@@ -40,3 +40,9 @@
         font-size: 4vw;
     }
 }
+
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+    .work-title {
+        font-size: 3.5vw;
+    }
+}

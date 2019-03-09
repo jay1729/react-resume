@@ -10,8 +10,8 @@ const resume = {
         {
             title: 'Software Development Intern',
             company: 'Zenefits',
-            from: '5/12/2018',
-            to: '18/01/2019',
+            from: '12/5/2018',
+            to: '01/18/2019',
             location: 'Bangalore',
             description :[
                 'Integrated insurance status of all employees after termination into company’s timeline.',
@@ -22,8 +22,8 @@ const resume = {
         {
             title: 'Software Development Intern',
             company: 'Zenefits',
-            from: '9/05/2018',
-            to: '20/07/2019',
+            from: '05/09/2018',
+            to: '07/20/2019',
             location: 'Bangalore',
             description :[
                 'Built a platform as a POC, where customers of Zenefits could cross-sell their products to each other. Used Redis for caching, implemented basic CRUD, implemented pagination. Built Front-End in React.js, backend in Django with a GraphQL server for communication between the two.', 

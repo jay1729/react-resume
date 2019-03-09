@@ -45,11 +45,14 @@
 
 .Experience {
     padding-bottom: 2vh;
-    margin: 0%;
-    
+    margin-bottom: 5vh;
+    border-bottom: 1px inset white;
 }
 
 @media only screen and (max-width: 800px){
+    .Experience {
+        margin-bottom: 2vh;
+    }
     .companyName {
         text-align: left;
         font-size: 5vw;
@@ -94,5 +97,14 @@
 @media only screen and (min-width: 500px) and (max-width: 800px) {
     .companyName {
         font-size: 3vw;
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+    .companyName {
+        font-size: 3.5vw;
+    }
+    .Experience {
+        font-size: 2vw;
     }
 }
