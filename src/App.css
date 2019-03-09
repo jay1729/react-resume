@@ -112,20 +112,24 @@
   top: 10vh;
   display: none;
   z-index: 100;
+  padding-bottom: 0%;
+  background-color: black;
 }
 
 .navpopupul {
   list-style-type:none;
-  background-color: #303030;
   margin-left: 0%;
-  padding-right: 10vh;
+  padding: 10%;
 }
 
 .popupli {
+  width: 30vw;
+  padding-right: 10vh;
   text-align: left;
   padding: 10%;
   margin-right: 3vh;
   font-size: 3.5vh;
+  border-bottom: 1px inset white;
 }
 
 .menu:focus {

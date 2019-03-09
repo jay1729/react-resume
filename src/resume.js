@@ -4,7 +4,7 @@ const resume = {
     github: 'https://github.com/jay1729',
     linkedin: 'https://www.linkedin.com/in/jayantha-gumballi/',
     about: {
-        desc: 'Self-motivated, persistent, analytical software developer who is always looking for new challenges. Started developing software as a hobby, now making a career out of it.'
+        desc: 'Self-motivated, persistent, analytical software developer who is always looking for new challenges. Strong in Software design and problem solving. \n \n Excellent in written and verbal communication. Interested in challenging technical roles.'
     },
     work: [
         {
