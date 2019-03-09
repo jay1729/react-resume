@@ -9,14 +9,22 @@
 
 .Name {
   height: 100vh;
+  width: 100vw;
   text-align: center;
-  display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 0%;
   background-image: url('header-backround.png');
   margin-bottom: 0%;
-  background-repeat: repeat-x;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.NameTitle {
+  width: 100%;
+  text-align: center;
+  margin-top: 0%;
+  display: block;
 }
 
 .App-link {
@@ -136,6 +144,16 @@
   background-color: #303030;
 }
 
+.Social {
+  margin-top: 10%;
+  width: 50%;
+  height: 40%;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+
 @media only screen and (max-width: 500px){
   .navitem {
     display: none;
@@ -151,6 +169,39 @@
     width: 10vh;
     display: block;
     background-color: black;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .Social {
+    width: 100%;
+    height: 30%;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    font-size: 5vh;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .Social {
+    width: 70%;
+    height: 20%;
+    margin: 0%;
+    margin-right: 0%;
+    padding-right: 0%;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1300px) {
+  .Social {
+    width: 75%;
+    height: 20%;
   }
 }
 

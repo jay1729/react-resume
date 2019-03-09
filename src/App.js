@@ -7,6 +7,7 @@ import Skills from './skills/Skills';
 import Portfolio from './portfolio/Portfolio';
 import Footer from './Footer/Footer';
 import About from './about/About';
+import SocialMediaInfo from './social-media/SocialMediaInfo';
 
 function NavPopup(props){
   return(
@@ -70,9 +71,12 @@ class App extends Component {
         <header className="App-header">
           <NavBar />
           <NavPopup removeMenu={this.removeMobileMenu}/>
-          <h1 className="Name" >
-            {resume.name}
-          </h1>
+          <div className="Name" >
+            <div><h1 className='NameTitle'>{resume.name}</h1></div>
+            <div className='Social'>
+              <SocialMediaInfo github={resume.github} email={resume.email} linkedin={resume.linkedin} />
+            </div>
+          </div>
         </header>
         <About desc={resume.about.desc} />
         <Work experience={resume.work}/>

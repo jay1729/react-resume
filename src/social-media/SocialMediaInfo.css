@@ -1,0 +1,17 @@
+.SocialMediaInfo {
+    height: inherit;
+    width: inherit;
+    background-color: inherit;
+    background-image: inherit;
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    font-size: inherit;
+}
+
+.SMILogo {
+    height: 10%;
+    width: 10%;
+    margin: 5%;
+    display: inline-block;
+}

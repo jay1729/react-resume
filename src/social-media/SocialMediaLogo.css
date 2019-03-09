@@ -1,11 +1,13 @@
 .SocialMediaLogo {
     height: inherit;
     width: inherit;
+    font-size: inherit;
 }
 
 .image {
     height: inherit;
     width: inherit;
+    font-size: 20vh;
     filter: invert(0.5);
 }
 
